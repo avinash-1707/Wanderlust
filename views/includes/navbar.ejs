@@ -1,0 +1,91 @@
+<style>
+  .btn-search {
+    border-radius: 50%;
+    background-color: #fe424d;
+    color: white;
+  }
+
+  .btn-search:hover {
+    background-color: #b82d36;
+    color: white;
+  }
+
+  .d-flex {
+    border: 2px solid rgb(209, 209, 209);
+    border-radius: 2rem;
+    height: 3.5rem;
+    padding: 0.5rem;
+  }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"
+      ><i class="fa-solid fa-compass"></i
+    ></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <form class="d-flex" role="search">
+          <input
+            style="border: none; border-radius: 2rem"
+            class="form-control me-2"
+            type="search"
+            placeholder="Search destinations ..."
+          />
+          <button class="btn btn-search" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+
+      <div class="navbar-nav ms-auto mr-3">
+        <a
+          class="new-button nav-link btn btn-light rounded-pill"
+          href="/listings/new"
+          >Airbnb your home</a
+        >
+        <% if(!currUser){ %>
+        <!-- <a class="nav-link" aria-current="page" href="/login">Login</a>
+        <a class="nav-link" href="/signup">Sign up</a> -->
+        <div class="btn-group">
+          <button
+            class="btn btn-light rounded-pill dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-circle-user"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/login">Login</a></li>
+            <li><a class="dropdown-item" href="/signup">Sign up</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="/listings/new">Airbnb your home</a>
+            </li>
+          </ul>
+        </div>
+        <% } if(currUser) { %>
+        <a class="nav-link btn btn-light rounded-pill" href="/logout"
+          >Log out</a
+        >
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
